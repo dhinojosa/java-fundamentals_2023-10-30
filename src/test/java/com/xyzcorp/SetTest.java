@@ -7,6 +7,7 @@ import java.util.*;
 
 public class SetTest {
 
+
     @Test
     void testHashSetOfTwoBoxesThatAreEqual() {
         Set<Box> boxHashSet = new HashSet<>();
@@ -34,8 +35,33 @@ public class SetTest {
         System.out.println(set);
     }
 
-    @Test
-    void testSetIntesection() {
+//    @Test
+//    void testHashSetOfBoxesThatAreEqual() {
+//        Set<Box> boxHashSet = new HashSet<>();
+//
+//        Box firstBox = new Box(50, 40, 120);
+//        System.out.println(firstBox.hashCode());
+//        boxHashSet.add(firstBox);
+//
+//        Box secondBox = new Box(50, 40, 120);
+//        System.out.println(secondBox.hashCode());
+//        boxHashSet.add(secondBox);
+//
+//        Box thirdBox = new Box(50, 40, 120);
+//        System.out.println(thirdBox.hashCode());
+//        boxHashSet.add(thirdBox);
+//
+//        Assertions.assertThat(boxHashSet).hasSize(1);
+//
+//        firstBox.setWidth(17);
+//        System.out.println(firstBox.hashCode());
+//        System.out.println(boxHashSet);
+//
+//        Assertions.assertThat(boxHashSet).hasSize(1);
+//    }
+
+//    @Test
+//    void testSetIntesection() {
 //        List<Integer> set = new ArrayList<>();
 //        set.add(10);
 //        set.add(20);
@@ -48,5 +74,5 @@ public class SetTest {
 
 //        Collections.
 //        System.out.println(set);
-    }
+//    }
 }

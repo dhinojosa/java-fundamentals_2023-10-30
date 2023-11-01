@@ -2,7 +2,7 @@ package com.xyzcorp;
 
 import java.util.Objects;
 
-public class Box {
+public class Box implements Comparable<Box> {
     private final double width;
     private final double height;
     private final double depth;
@@ -51,7 +51,30 @@ public class Box {
     public double depth() {
         return depth;
     }
+
+    @Override
+    public int compareTo(Box other) {
+        return Double.compare(this.volume(), other.volume());
+    }
+
+    public double volume() {
+        return this.width * this.height * this.depth;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

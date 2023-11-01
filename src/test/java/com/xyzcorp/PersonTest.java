@@ -3,6 +3,10 @@ package com.xyzcorp;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+import java.util.Optional;
+import java.util.function.Supplier;
+
 public class PersonTest {
 
     @Test
@@ -39,4 +43,22 @@ public class PersonTest {
         Assertions.assertThat(person1.toString())
             .isEqualTo("Person[firstName=Prianka, lastName=Kottapalli]");
     }
+
+
+    @Test
+    void testPersonWithBirthday() {
+        Person person = Person.of("Bjarne", "Strousoup", LocalDate.of(1950, 12, 30));
+        Optional<Integer> age = person.age();
+        Assertions.assertThat(age).contains(72);
+    }
+
+
+    @Test
+    void testPersonWithBirthdayAndCurrentDateOfMyChoosing() {
+        Person person = new Person("Bjarne", "Strousoup",
+            LocalDate.of(1950, 12, 30), () -> LocalDate.of(2023, 4, 19));
+        Optional<Integer> age = person.age();
+        Assertions.assertThat(age).contains(72);
+    }
+
 }
